@@ -13,6 +13,10 @@ public class ApiClient {
         return new ApiClient().sendGetRequest(path);
     }
 
+    public String getAudiobooksByUserId(Long userId) {
+        return sendGetRequest("/audiobooks/user/" + userId);
+    }
+
     // GET endpoints
     public String getAllUsers() {
         return sendGetRequest("/users");

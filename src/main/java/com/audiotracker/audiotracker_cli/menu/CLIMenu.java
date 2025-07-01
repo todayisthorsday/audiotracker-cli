@@ -58,8 +58,8 @@ public class CLIMenu {
     private void allAudiobooksByUser() {
         System.out.print("Enter the user ID: ");
         Long userId = Long.parseLong(scanner.nextLine());
-        String response = ApiClient.get("/sessions/user/" + userId);
-        System.out.println("Audiobooks" + userId + "has listened to:\n" + response);
+        String response = ApiClient.get("/audiobooks/user/" + userId);
+        System.out.println("Audiobooks read by user" + userId + ":\n" + response);
     }
 
     private void allAudiobooksByGenre() {
@@ -77,7 +77,7 @@ public class CLIMenu {
     }
 
     private void mostRecentSessions() {
-        String response = ApiClient.get("/sessions/most-recent");
+        String response = ApiClient.get("/sessions/recent?count=5");
         System.out.println("Most recent sessions:\n" + response);
     }
 }
