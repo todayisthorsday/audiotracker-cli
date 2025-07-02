@@ -6,7 +6,6 @@ import com.audiotracker.audiotracker_cli.model.Session;
 import com.audiotracker.audiotracker_cli.model.User;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import java.util.Objects;
 import java.util.Scanner;
 
 public class CLIMenu {
@@ -16,6 +15,11 @@ public class CLIMenu {
 
     public CLIMenu() {
         this.apiClient = new ApiClient();
+        this.scanner = new Scanner(System.in);
+    }
+
+    public CLIMenu(ApiClient mockClient) {
+        this.apiClient = mockClient;
         this.scanner = new Scanner(System.in);
     }
 
@@ -36,7 +40,7 @@ public class CLIMenu {
             }
         }
 
-        System.out.println("See you later, aligator!");
+        System.out.println("See you later, alligator!");
     }
 
     private void printMainMenu() {
@@ -219,4 +223,6 @@ public class CLIMenu {
         scanner.nextLine();
     }
 }
+
+
 
