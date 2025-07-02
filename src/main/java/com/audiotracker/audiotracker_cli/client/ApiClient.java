@@ -17,6 +17,14 @@ public class ApiClient {
         return sendGetRequest("/audiobooks/user/" + userId);
     }
 
+    public String getUserById(Long userId) {
+        return sendGetRequest("/users/" + userId);
+    }
+
+    public String getGenreById(Long id) {
+        return sendGetRequest("/genres/" + id);
+    }
+
     // GET endpoints
     public String getAllUsers() {
         return sendGetRequest("/users");
@@ -33,6 +41,7 @@ public class ApiClient {
     public String getAllSessions() {
         return sendGetRequest("/sessions");
     }
+
 
     // POST endpoints
     public String createUser(String jsonPayload) {
